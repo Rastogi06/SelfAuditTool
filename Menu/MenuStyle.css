@@ -1,0 +1,531 @@
+body{
+    font-family: 'PT Sans', sans-serif;    
+    width:100%;
+}
+
+span{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    color: white;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+#menu{    
+    width: 35px;
+    height: 30px;
+    margin: 30px 0 20px 20px;
+    cursor: pointer;
+}
+
+.bar{
+     height: 5px;
+     width: 100%;
+     background-color: white;
+     display: block;
+     border-radius: 5px;
+}
+
+#bar1{
+    transform:translateY(-4px);
+}
+
+#bar3{
+    transform:translateY(4px);
+}
+
+.change .bar{
+    background-color: white;
+}
+
+.change #bar1{
+    transform: translateY(4px) rotateZ(-45deg);
+}
+
+.change #bar3{
+    transform: translateY(-6px) rotateZ(45deg);
+}
+
+.change #bar2{
+    opacity: 0;
+}
+
+.nav li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav li a:hover{
+    font-weight: bold;
+}
+
+.nav li{
+    list-style: none;
+    padding: 16px 0;
+}
+
+.nav{
+    padding: 0;
+    margin: 0 20px;
+    transition: 0.3s ease;
+    display: none;
+}
+
+.change{
+    display: block;
+}
+
+.menu-bg{
+    z-index: 1;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, #1a73e8, #a2b4cc);
+    transition: 0.3s ease;
+    border-radius: 50%;
+    margin: 30px 0 20px 20px;
+}
+
+#menu-bar{
+    z-index: 2;
+}
+
+.change-bg{
+    width: 550px;
+    height: 540px;
+    transform: translate(-65%,-43%);
+}
+
+.menu-bg, #menu-bar{
+    top: 5px;
+    left: 0;
+    position: absolute;
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top:18em;
+}
+
+#hide{
+    display: none;
+}
+
+#header{
+    background-color: #1a73e8;
+    top: 0;
+    position: absolute;
+    width: -webkit-fill-available;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+#img-bg{
+    position: relative;
+    height: 500px;
+    top:15%;
+    left:38%;
+}
+
+.dot{
+    width:10px;
+    height: 10px;
+    background-color: white;
+    display: inline-block;
+    border-radius: 50%;
+    margin:2px
+}
+
+.dot1{
+    background-color: red;
+    animation: jump-up 0.6s 0.1s linear infinite;
+}
+
+.dot2{
+    background-color: #ffd64a;
+    animation: jump-up 0.6s 0.2s linear infinite;
+}
+
+.dot3{
+    background-color:#1a73e8;
+    animation: jump-up 0.6s 0.3s linear infinite;
+}
+
+@keyframes jump-up{
+    50%{
+        transform: translate(0,15px);
+    }
+}
+
+#loader span{
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Mobile Screening */
+@media screen and (max-width: 850px) {
+    #img-bg{
+    position: relative;
+    height: 500px;
+    top: 15%;
+    left: 4%;
+    }
+
+    h1{
+        text-align: center;
+        color: white;
+        font-size: 22px;
+        padding-top: 10px;
+        padding-left: 40px;
+    }
+}
+
+/* iPad Screening */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+    /* For portrait layouts only */
+    #img-bg{
+    position: relative;
+    height: 500px;
+    top: 15%;
+    left: 30%;
+    }
+  }
+
+  @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+    /* For landscape layouts only */
+    #img-bg{
+        position: relative;
+        height: 500px;
+        top: 15%;
+        left: 33%;
+        }
+  }
+
+  /* Track Process */
+
+ 
+  .steps-container{
+      position: relative;
+      top:100px;
+  }
+
+  .track-progress {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .track-progress li {
+    list-style-type: none;
+    display: inline-block;  
+    position: relative;
+    margin: 0;
+    padding: 0;  
+    text-align: center;
+    line-height: 34px;
+    height: 30px;  
+    background-color: #f0f0f0;
+  }
+
+.track-progress[data-steps="4"] li { width: 24%;}
+
+.track-progress span{
+    padding: 0;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.track-progress li > span {   
+  
+    display: block;
+    color: #999;    
+  }
+  
+  .track-progress span.active {
+    color: white;
+    background-color: #5bc0de;
+  }
+
+  .track-progress li > span:after,
+.track-progress li > span:before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: solid transparent;
+  border-left-color: #f0f0f0;
+  border-width: 15px;
+}
+
+.track-progress li > span:after {
+  top: -5px;
+  z-index: 1;
+  border-left-color: white;
+  border-width: 20px;
+}
+
+.track-progress li > span:before {
+  z-index: 2;
+}
+
+.track-progress li.done + li > span:before {
+    border-left-color: #ccc;
+  }
+  
+  .track-progress li:first-child > span:after,
+  .track-progress li:first-child > span:before {
+    display: none;
+  }
+
+.track-progress li:first-child i,
+.track-progress li:last-child i {
+  display: block;
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: solid transparent;
+  border-left-color: white;
+  border-width: 15px;
+}
+
+.track-progress li:last-child i {
+  left: auto;
+  right: -15px;
+  border-left-color: transparent;
+  border-top-color: white;
+  border-bottom-color: white;
+}
+
+/* Contact Us*/
+
+.contact-container{
+    margin:130px;
+}
+
+.connect{
+    color: cornflowerblue;
+    font-size: 18px;
+    float: left;
+    margin-left: -50px;
+}
+.contact-image{
+    border-radius: 50%;
+    width:220px;
+}
+
+.h3{
+color:cornflowerblue;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.caption {
+    display: block;
+    color:black;
+    white-space: pre-line;
+    padding-left: 20px;
+}
+
+#dispimg{
+    width:150px;
+    height:150px;
+    border-radius:50%
+}
+ 
+.column {
+    float: left;
+    width: 40.33%;
+    padding: 5px;
+  }
+  
+ .row1{
+     display: flex;
+     padding-top: 80px;
+ }
+
+ .row2{
+     display: flex;
+     padding-top: 90px;
+     padding-left:300px;
+ }
+
+ /* About us */
+
+.about-container{
+    margin: 130px;
+
+}
+
+.about-tool p{
+    color:black;
+    margin-left: -50px;
+    float: left;
+}
+
+.about-tool-instruction span{
+    color:#666;
+    margin-left: -50px;
+    float: left;
+    font-weight: 700;
+    font-size:16px;    
+}
+
+.about-tool-instruction p{
+    color:black;
+    margin-left: -98px;
+    float: left;
+}
+
+.img-about{
+    float: left;
+    margin-left: -50px;
+}
+
+.img-luck{
+    width:50%
+}
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #5ea5fd;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;    
+    width: 113px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    margin-top: 95px;
+    height: 46px;
+    padding-bottom: 6px;
+    border-color: none;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    padding: 0;
+    border-color: none;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    border-color: none;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+    border-color: none;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+    border-color: none;
+  }
+  
+  .button a{
+      color:white;
+      text-decoration: none;
+  }
+  
+  .button1 {
+    background-color: #337ab7; 
+    color: black; 
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    font-size:16px;
+    border-radius: 4px; 
+    margin-top: 89px;  
+  }
+
+  .button1 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    padding: 0;
+  }
+  
+  .button1:hover {
+    background-color: blue;
+    color: white;
+  }
+
+
+/* Index HTML styling*/
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    /* border: 1px solid #ccc; */
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 68px;
+    transition: 0.3s;
+    color:#999;
+    font-size: 15px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color:#71d2ef;
+    color: white;
+    font-size: 15px;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  .tabcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  }
+  
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  .index-container{
+      margin:130px;
+  }

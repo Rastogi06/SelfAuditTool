@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../Menu/MenuStyle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans">
+</head>
+
+<body>
+    <div id="loader">
+        <div class="container" id="load">
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+        </div>
+        <span>Loading</span>
+    </div>
+    <div id="hide">
+        <div id="header">
+            <h1>Welcome to the self assessment tool</h1>
+        </div>
+        <div id="menu-bar">
+            <div id="menu" onclick="onClickMenu()">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </div>
+            <ul class="nav" id="nav">
+                <li><a href="../Menu/Menu.html">Home</a></li>
+                <li><a href="../Home/Index.html">Index</a></li>
+                <li><a href="../About/About.html">About</a></li>
+                <li><a href="../Contact/ContactUs.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="menu-bg" id="menu-bg"></div>
+        <div class="index-container">
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'tab1')"><b>Step 1</b><br> Select Project
+                    Delivery</button>
+                <button class="tablinks" onclick="openTab(event, 'tab2')"><b>Step 2</b><br> Complete
+                    Questionnaire</button>
+                <button class="tablinks" onclick="openTab(event, 'tab3')"><b>Step 3</b><br> Review Results</button>
+                <button class="tablinks" onclick="openTab(event, 'tab4')"><b>Step 4</b><br> Plan Development</button>
+            </div>
+
+            <!-- Tab content -->
+            <div id="tab1" class="tabcontent"><br>
+                <h3>Please select the project delivery.</h3><br>
+
+                <input type="radio" id="project1" name="delivery" value="project1">
+                <label for="project1">Project Delivery 1 </label><br><br>
+                <input type="radio" id="project2" name="delivery" value="project2">
+                <label for="project2">Project Delivery 2 </label><br><br><br>
+            </div>
+
+            <div id="tab2" class="tabcontent">
+                <br>
+                <h3>Please answer the below questions.</h3>
+                <br>
+                <p>1. How long do you spend productively working on the tasks assigned to you?</p>
+                <input type="radio" id="all" name="option" value="all">
+                <label for="all">All of the Time </label><br>
+                <input type="radio" id="some" name="option" value="some">
+                <label for="some">Some of the Time</label><br>
+                <input type="radio" id="most" name="option" value="most">
+                <label for="most">Most of the Time</label>
+                <br><br>
+                <p>2. Describe your overall project experience and satisfaction?</p>
+                <input type="radio" id="all" name="option" value="all">
+                <label for="all">Positive</label><br>
+                <input type="radio" id="some" name="option" value="some">
+                <label for="some">Negative</label><br>
+                <input type="radio" id="most" name="option" value="most">
+                <label for="most">Neutral</label>
+                <br><br>
+            </div>
+
+            <div id="tab3" class="tabcontent">
+                <h3>Check your results below - </h3>
+                <p></p>
+            </div>
+
+            <div id="tab4" class="tabcontent">
+                <h3>Plan your development based on your score. </h3>
+                <p></p>
+            </div>
+
+        </div>
+    </div>
+    <script src="../Menu/Script.js"></script>
+
+</body>
+
+</html>
