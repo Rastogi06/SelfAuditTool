@@ -19,7 +19,7 @@ function stepTracker(){
     $(this).addClass('active');
 }
 
-function openTab(evt, cityName) {
+function openTab(evt, tabvalue) {
     // Declare all variables
     var i, tabcontent, tablinks;
   
@@ -36,7 +36,7 @@ function openTab(evt, cityName) {
     }
   
     // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(tabvalue).style.display = "block";
     evt.currentTarget.className += " active";
   }
 
